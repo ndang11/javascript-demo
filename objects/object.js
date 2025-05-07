@@ -37,3 +37,42 @@ console.log(isEmpty(user)); // true
 
 user.name = "John";
 console.log(isEmpty(user)); // false
+
+//we have an object salaries
+// let salaries = {
+//  John: 100,
+//  Ann: 160,
+//  Pete: 130
+// }
+// Write a function that takes this object and returns the sum of all salaries
+//
+//
+// Write another function that multiplies all salaries by 3 and returns the new object
+
+function sumSalaries(obj) {
+  let sum = 0;
+  for (let key in obj) {
+    sum += obj[key];
+  }
+  return sum;
+}
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+
+console.log(sumSalaries(salaries)); // Output: 390
+
+function tripleSalaries(obj) {
+  let newSalaries = {};
+  for (let key in obj) {
+    newSalaries[key] = obj[key] * 3;
+  }
+  return newSalaries;
+}
+
+let updatedSalaries = tripleSalaries(salaries);
+console.log(updatedSalaries);
+// Output: { John: 300, Ann: 480, Pete: 390 }
